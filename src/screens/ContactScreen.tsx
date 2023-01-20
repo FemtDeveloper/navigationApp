@@ -1,12 +1,12 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 
-const Tab2Screen = () => {
+const ContactScreen = () => {
   return (
     <View>
-      <Text>Tab2Screennnn</Text>
+      <Text>ContactScreen</Text>
     </View>
   );
 };
 
-export default Tab2Screen;
+export default ContactScreen;

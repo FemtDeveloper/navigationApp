@@ -37,5 +37,7 @@ export const styles = StyleSheet.create({
   menuBtn: {marginVertical: 10},
   menuText: {
     fontSize: 20,
+    marginLeft: 10,
+    color: colors.primary,
   },
 });

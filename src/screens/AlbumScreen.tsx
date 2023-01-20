@@ -1,12 +1,12 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 
-const Tab2Screen = () => {
+const AlbumScreen = () => {
   return (
     <View>
-      <Text>Tab2Screennnn</Text>
+      <Text>AlbumScreen</Text>
     </View>
   );
 };
 
-export default Tab2Screen;
+export default AlbumScreen;
