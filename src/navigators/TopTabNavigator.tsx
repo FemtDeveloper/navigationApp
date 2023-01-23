@@ -47,10 +47,10 @@ export const TopTabNavigator = () => {
           }
           return <Text style={{color}}>{iconName}</Text>;
         },
-        // tabBarPressColor: colors.primary,
-        // tabBarStyle: {borderBottomWidth: 0, borderWidth: 0, elevation: 0},
-        // tabBarIndicatorStyle: {backgroundColor: 'red'},
-        //   tabBarShowIcon: true,
+        tabBarPressColor: colors.primary,
+        tabBarStyle: {borderBottomWidth: 0, elevation: 0},
+        tabBarIndicatorStyle: {backgroundColor: colors.primary},
+        tabBarLabelStyle: {color: colors.primary, fontWeight: '500'},
       })}>
       <Tab.Screen name="Chat" component={ChatScreen} />
       <Tab.Screen name="Contact" component={ContactScreen} />

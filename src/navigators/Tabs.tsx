@@ -1,6 +1,7 @@
 import React from 'react';
 import {Platform, Text} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import Icon from 'react-native-vector-icons/Ionicons';
 import Tab1Screen from '../screens/Tab1Screen';
 // import Tab2Screen from '../screens/Tab2Screen';
 import StackNavigator from './StackNavigator';
@@ -18,46 +19,52 @@ const TabsAndroid = () => {
   return (
     <BottomTabAndroid.Navigator
       sceneAnimationEnabled={true}
-      barStyle={{backgroundColor: colors.primary}}
-      activeColor="blue"
+      barStyle={{backgroundColor: colors.primary, padding: 0}}
+      activeColor={'red'}
+      inactiveColor="white"
+      shifting
       screenOptions={({route}) => ({
         tabBarIcon: ({color}) => {
           let iconName: string = '';
           switch (route.name) {
             case 'Tab1Screen':
-              iconName = 'T1';
+              iconName = 'albums-outline';
               break;
             case 'Tab2Screen':
-              iconName = 'T2';
+              iconName = 'albums-outline';
               break;
             case 'StackNavigator':
-              iconName = 'St';
+              iconName = 'albums-outline';
               break;
 
             default:
               break;
           }
-          return <Text style={{color}}>{iconName}</Text>;
+          return (
+            <>
+              <Icon name={iconName} size={20} color={color} />
+            </>
+          );
         },
-        // tabBarActiveTintColor: 'yellow',
-        // tabBarActiveBackgroundColor: 'green',
+        tabBarColor: 'red',
+        tabBarBadge: true,
       })}>
       <BottomTabAndroid.Screen
         name="Tab1Screen"
-        options={{
-          title: 'Tab1',
-          // tabBarIcon: props => <Text style={{color: props.color}}>T1</Text>,
-        }}
+        // options={{
+        //   tabBarLabel: 'Tab1',
+        //   // tabBarIcon: props => <Text style={{color: props.color}}>T1</Text>,
+        // }}
         component={Tab1Screen}
       />
       <BottomTabAndroid.Screen
         name="Tab2Screen"
-        options={{title: 'Tab2'}}
+        // options={{tabBarLabel: 'Tab2', tabBarColor: 'blue'}}
         component={TopTabNavigator}
       />
       <BottomTabAndroid.Screen
         name="StackNavigator"
-        options={{title: 'Stack'}}
+        // options={{tabBarLabel: 'Stack', tabBarColor: 'green'}}
         component={StackNavigator}
       />
     </BottomTabAndroid.Navigator>
