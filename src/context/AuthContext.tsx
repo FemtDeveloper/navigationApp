@@ -15,7 +15,10 @@ export const authInitialState: AuthState = {
 
 export interface AuthContextProps {
   authState: AuthState;
-  signin: () => void;
+  signIn: () => void;
+  changeFavoriteIcon: (iconName: string) => void;
+  changeUsername: (username: string) => void;
+  logout: () => void;
 }
 
 export const AuthContext = createContext({} as AuthContextProps);
@@ -23,9 +26,23 @@ export const AuthContext = createContext({} as AuthContextProps);
 export const AuthProvider = ({children}: any) => {
   const [authState, dispatch] = useReducer(authReducer, authInitialState);
 
+  const signIn = () => {
+    dispatch({type: 'signIn'});
+  };
+
+  const logout = () => {
+    dispatch({type: 'logout'});
+  };
+  const changeFavoriteIcon = (iconName: string) => {
+    dispatch({type: 'changeFavIcon', payload: iconName});
+  };
+  const changeUsername = (username: string) => {
+    dispatch({type: 'changeUsername', payload: username});
+  };
+
   return (
     <AuthContext.Provider
-      value={{authState: authInitialState, signin: () => {}}}>
+      value={{authState, signIn, changeFavoriteIcon, logout, changeUsername}}>
       {children}
     </AuthContext.Provider>
   );

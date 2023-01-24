@@ -51,20 +51,20 @@ const TabsAndroid = () => {
       })}>
       <BottomTabAndroid.Screen
         name="Tab1Screen"
-        // options={{
-        //   tabBarLabel: 'Tab1',
-        //   // tabBarIcon: props => <Text style={{color: props.color}}>T1</Text>,
-        // }}
+        options={{
+          tabBarLabel: 'Tab1',
+          // tabBarIcon: props => <Text style={{color: props.color}}>T1</Text>,
+        }}
         component={Tab1Screen}
       />
       <BottomTabAndroid.Screen
         name="Tab2Screen"
-        // options={{tabBarLabel: 'Tab2', tabBarColor: 'blue'}}
+        options={{tabBarLabel: 'Tab2', tabBarColor: 'blue'}}
         component={TopTabNavigator}
       />
       <BottomTabAndroid.Screen
         name="StackNavigator"
-        // options={{tabBarLabel: 'Stack', tabBarColor: 'green'}}
+        options={{tabBarLabel: 'Stack', tabBarColor: 'green'}}
         component={StackNavigator}
       />
     </BottomTabAndroid.Navigator>
